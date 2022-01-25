@@ -21,7 +21,7 @@
                 required: true,
                 input_html: { autocomplete: "dni" }%>
     <%= f.input :birthdate,
-                required: true,start_year: Date.today.year - 50, end_year: Date.today.year - 18%>
+                required: true,as: :date, html5: true%>
     <%= f.input :license_number,
                 required: true,
                 input_html: { autocomplete: "license_number" }%>
