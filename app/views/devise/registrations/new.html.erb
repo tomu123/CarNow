@@ -8,6 +8,23 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+    <%= f.input :first_name,
+                required: true,
+                input_html: { autocomplete: "first_name" }%>
+    <%= f.input :last_name,
+                required: true,
+                input_html: { autocomplete: "last_name" }%>
+    <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "phone_number" }%>
+    <%= f.input :dni,
+                required: true,
+                input_html: { autocomplete: "dni" }%>
+    <%= f.input :birthdate,
+                required: true,start_year: Date.today.year - 50, end_year: Date.today.year - 18%>
+    <%= f.input :license_number,
+                required: true,
+                input_html: { autocomplete: "license_number" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
