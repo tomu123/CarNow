@@ -1,10 +1,10 @@
 class Car < ApplicationRecord
   belongs_to :user
-  validates :brand, presence: true, uniqueness: { case_sensitive: false }, length: {minimum: 3}
-  validates :model, presence: true, uniqueness: { case_sensitive: false }, length: {minimum: 3}
+  validates :brand, presence: true
+  validates :model, presence: true
   validates :year, presence: true
-  validates :number_plate, presence: true, uniqueness: { case_sensitive: false }, length: {minimum: 7}
-  validates :color, presence: true, uniqueness: { case_sensitive: false }, length: {minimum: 3}
-  validates :city, presence: true, uniqueness: { case_sensitive: false }, length: {minimum: 5}
+  validates :number_plate, presence: true
+  validates :color, presence: true
+  validates :city, presence: true
   validates :price_per_day, presence: true
 end
