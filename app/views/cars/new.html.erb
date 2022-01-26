@@ -1,2 +1,10 @@
-<h1>Cars#new</h1>
-<p>Find me in app/views/cars/new.html.erb</p>
+<h1>New Car</h1>
+<%= simple_form_for @car do |f| %>
+  <%= f.input :brand%>
+  <%= f.input :model%>
+  <%= f.input :year, collection: 1980..(Date.today.year) %>
+  <%= f.input :number_plate %>
+  <%= f.input :color %>
+  <%= f.input :city %>
+  <%= f.input :price_per_day %>
+<% end %>

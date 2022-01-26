@@ -36,7 +36,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :city, :rating, :city, :model, :color, :number_plate, :year)
+    params[:car][:year] = Date.new(params[:car][:year], 1, 1)
+    params.require(:car).permit(:brand, :city, :rating, :model, :color, :number_plate, :year)
   end
-
 end
