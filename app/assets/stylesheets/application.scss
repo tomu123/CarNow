@@ -15,9 +15,43 @@
 @import "components/button";
 @import "components/banner";
 @import "components/card-car";
-@import "components/nav-bar";
-
+@import "components/footer";
+.cards  h2 {
+  margin-top: 50px;
+  text-align: center;
+}
 .cards .container {
   display: flex;
   flex-wrap: wrap;
+}
+/*home-advantages*/
+.advantages {
+  background: #e27676;
+  text-align: center;
+  color: #fff;
+}
+.advantages h2{
+  padding-top: 30px;
+  margin: 30px;
+}
+.advantages .container {
+  display: flex;
+  justify-content: space-between;
+}
+.advantage {
+  margin: 20px;
+  text-align: center;
+}
+.advantage .line {
+  margin: 0 auto 10px auto;
+  width: 55px;
+  height: 2px;
+  background: #fff;
+}
+.advantage i{
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  color: #fff;
 }

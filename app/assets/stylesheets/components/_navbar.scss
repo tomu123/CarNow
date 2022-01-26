@@ -1,8 +1,18 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #e27676;
 }
-
+.navbar-lewagon {
+  i{
+    font-size: 35px;
+    color: #fff;
+  }
+}
+.navbar-nav .nav-link{
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff !important;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
