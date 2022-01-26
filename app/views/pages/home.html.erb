@@ -1,91 +1,50 @@
-<header>
-  <div class="nav-bar">
-    <div class="container">
-      <div class="logo">
-        <i class="fas fa-car-side"></i>
-      </div>
-      <div class="menu">
-        <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Carros</a></li>
-        <li><a href="#">Arrendadores</a></li>
-        <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
+
 <div class="banner" style="background-image:url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')">
   <h2>Alquiler de autos en Lima</h2>
-  <a href="#" class="btn">Búsqueda flexible</a>
+  <%= link_to "Búsqueda flexible", cars_path, class: "btn" %>
 </div>
+
 <section class="cards">
-<div class="container">
-  <article class="card-car">
-    <div class="info-car">
-    <p>s/18/día</p>
-    <p>Económico</p>
-    <p>2 adultos, 2 maletas</p>
-    <a href="#" class="btn">Ver oferta</a>
+  <h2>ELIGE TU COCHE</h2>
+  <div class="container">
+  <% @cars.each do |car|%>
+    <div class="card-car">
+      <div class="info-car">
+      <p><b>S/.<%= car.price_per_day%> / dia</b></p>
+      <p><b>Ciudad:</b> <%= car.city%></p>
+      <p><b>Marca:</b> <%= car.brand%></p>
+      <p><b>Modelo:</b> <%= car.model%></p>
+      <a href="#" class="btn">Ver auto</a>
+      </div>
+      <div class="img-car">
+      <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
+      </div>
     </div>
-    <div class="img-car">
-    <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
-    </div>
-  </article>
-  <article class="card-car">
-    <div class="info-car">
-    <p>s/18/día</p>
-    <p>Económico</p>
-    <p>2 adultos, 2 maletas</p>
-    <a href="#" class="btn">Ver oferta</a>
-    </div>
-    <div class="img-car">
-    <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
-    </div>
-  </article>
-  <article class="card-car">
-    <div class="info-car">
-    <p>s/18/día</p>
-    <p>Económico</p>
-    <p>2 adultos, 2 maletas</p>
-    <a href="#" class="btn">Ver oferta</a>
-    </div>
-    <div class="img-car">
-    <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
-    </div>
-  </article>
-  <article class="card-car">
-    <div class="info-car">
-    <p>s/18/día</p>
-    <p>Económico</p>
-    <p>2 adultos, 2 maletas</p>
-    <a href="#" class="btn">Ver oferta</a>
-    </div>
-    <div class="img-car">
-    <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
-    </div>
-  </article>
-  <article class="card-car">
-    <div class="info-car">
-    <p>s/18/día</p>
-    <p>Económico</p>
-    <p>2 adultos, 2 maletas</p>
-    <a href="#" class="btn">Ver oferta</a>
-    </div>
-    <div class="img-car">
-    <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
-    </div>
-  </article>
-  <article class="card-car">
-    <div class="info-car">
-    <p>s/18/día</p>
-    <p>Económico</p>
-    <p>2 adultos, 2 maletas</p>
-    <a href="#" class="btn">Ver oferta</a>
-    </div>
-    <div class="img-car">
-    <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
-    </div>
-  </article>
-</div>
+  <% end %>
+  </div>
+</section>
+<section class="advantages">
+<h2>¿POR QUÉ RESERVAR TU AUTO CON NOSOTROS?</h2>
+  <div class="container">
+    <article class="advantage">
+      <i class="fas fa-dollar-sign"></i>
+      <h4>Las mejores tarifas</h4>
+      <div class="line"></div>
+      <p>Los mejores precios del mercado y sin cargos ocultos.
+      Aceptamos todas las tarjetas para que disfrutes de tu
+      recorrido.</p>
+    </article>
+    <article class="advantage">
+      <i class="fas fa-check"></i>
+      <h4>Buenos vehículos</h4>
+      <div class="line"></div>
+      <p>Todos nuestros vehículos están en muy buen estado, en constante revisión para que no tengas inconvenientes durante tu viaje.</p>
+    </article>
+    <article class="advantage">
+      <i class="fas fa-star"></i>
+      <h4>Excelente atención</h4>
+      <div class="line"></div>
+      <p>Nuestro objetivo es brindar la mejor experiencia en alquiler de autos a nuestros clientes con una atención personalizada.</p>
+    </article>
+  </div>
 </section>
