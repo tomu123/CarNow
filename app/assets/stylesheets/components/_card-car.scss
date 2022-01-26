@@ -1,0 +1,16 @@
+.card-car {
+  display: flex;
+  width: 360px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #cccaca;
+  margin: 10px 10px 10px 0;
+  background: #fff;
+  padding: 10px;
+}
+.img-car {
+  width: 150px;
+}
+.img-car img{
+  width: 100%;
+}
