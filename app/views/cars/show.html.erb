@@ -5,7 +5,6 @@
       <h4 class="card-title">S/.<%= @car.price_per_day %> por día</h4>
     </div>
   </div>
-
   <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
       <li class="list-group-item"><%= @car.city %></li>
@@ -18,8 +17,8 @@
   </div>
 </div>
 <div>
-    <%= link_to "Volver al listado", car_path(@car) %>
-    <%= link_to "Editar", car_path(@car) %>
+    <%= link_to "Volver al listado", cars_path %>
+    <%= link_to "Editar", new_car_path %>
     <%= link_to "Eliminar", car_path(@car), method: :delete,
               data: { confirm: "Are you sure?" }  %>
   </div>
