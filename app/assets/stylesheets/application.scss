@@ -11,3 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import "components/button";
+@import "components/banner";
+@import "components/card-car";
+@import "components/nav-bar";
+
+.cards .container {
+  display: flex;
+  flex-wrap: wrap;
+}
