@@ -1,0 +1,22 @@
+.search {
+  background-color: #f4f4f4;
+  border-radius: 30px;
+  box-shadow: gray;
+  padding: 8px;
+}
+.form-control {
+  border-radius: 30px;
+}
+.btn-1 {
+  border-radius: 50%;
+  background-color: #E27676;
+  color: #f4f4f4;
+  border: 2px #E27676;
+  font-size: 25px;
+  margin: 2px;
+}
+.btn-1 :hover {
+  background-color: white;
+  border: 2px black;
+  color: black;
+}
