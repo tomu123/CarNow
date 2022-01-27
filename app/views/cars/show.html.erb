@@ -1,16 +1,18 @@
 <div class="container">
-  <h2><%= @car.brand %></h2>
-  <h6><i class="fas fa-star"></i><%= @car.rating %>4.75 - 35 reseñas   <%= @car.city %></h6>
+  <div class="title">
+    <h2><%= @car.brand %> · <%= @car.model %></h2>
+    <h6><i class="fas fa-star">·</i><%= @car.rating %> 4.75 · 35 reseñas  · <%= @car.city %></h6>
+  </div>
   <div class="card-group">
     <div class="card">
-      <img class="card-img-top" src="https://images.unsplash.com/photo-1610473140118-ecd24cc0a670?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fGRvZGdlJTIwY2hhcmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
+      <img class="card-img-top-ppal" src="https://images.unsplash.com/photo-1610473140118-ecd24cc0a670?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fGRvZGdlJTIwY2hhcmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
     </div>
     <div class="card">
-      <img class="card-img-top" src="https://images.unsplash.com/photo-1598017250541-e9b7f589bfc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGRvZGdlJTIwY2hhcmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
+      <img class="card-img-top mb-3 bg-transparent" src="https://images.unsplash.com/photo-1598017250541-e9b7f589bfc8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzN8fGRvZGdlJTIwY2hhcmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
       <img class="card-img-top" src="https://images.unsplash.com/photo-1573841261383-80429863a1f7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjJ8fGRvZGdlJTIwY2hhcmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
     </div>
     <div class="card">
-      <img class="card-img-top" src="https://images.unsplash.com/photo-1573136810154-a58a74ce2761?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjF8fGRvZGdlJTIwY2hhcmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
+      <img class="card-img-top mb-3 bg-transparent" src="https://images.unsplash.com/photo-1573136810154-a58a74ce2761?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjF8fGRvZGdlJTIwY2hhcmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
       <img class="card-img-top" src="https://images.unsplash.com/photo-1629649075111-a5a850107bad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGRvZGdlJTIwY2hhcmdlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="Card image cap">
     </div>
   </div>
@@ -18,10 +20,10 @@
     <div class="col-sm-6">
       <div class="card">
         <div class="card-body">
-          <h2>Auto <%= @car.brand %>, <%= @car.model %></h2>
-          <p><i class="fas fa-car"></i> Auto clásico</p>
-          <p><i class="fas fa-wrench"></i> Mantenimiento contínuo</p>
-          <p><i class="fas fa-clock"></i> Puntualidad</p>
+          <h2><%= @car.brand %>, <%= @car.model %></h2>
+          <p><i class="fas fa-car"></i> · Auto clásico</p>
+          <p><i class="fas fa-wrench"></i> · Mantenimiento contínuo</p>
+          <p><i class="fas fa-clock"></i> · Puntualidad</p>
         </div>
       </div>
     </div>
@@ -46,10 +48,9 @@
     </div>
   </div>
 </div>
-
-<div>
-    <%= link_to "Volver al listado", cars_path %>
-    <%= link_to "Editar", new_car_path %>
-    <%= link_to "Eliminar", car_path(@car), method: :delete,
-              data: { confirm: "Are you sure?" }  %>
-  </div>
+<div class="group-btn">
+  <a class="btn btn-primary mb-3" href="<% link_to "Volver al listado", cars_path %>" role="button">Volver al listado</a>
+  <a class="btn btn-primary mb-3" href="<% link_to "Editar", new_car_path %>" role="button">Editar</a>
+  <a class="btn btn-primary mb-3 " href="<% link_to "Eliminar", car_path(@car), method: :delete,
+              data: { confirm: "Are you sure?" }  %>" role="button">Eliminar</a>
+</div>
