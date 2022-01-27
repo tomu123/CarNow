@@ -16,16 +16,20 @@
   <div class="container">
   <% @cars.each do |car|%>
     <div class="card-car">
-      <div class="info-car">
-      <p><b>S/.<%= car.price_per_day%> / dia</b></p>
-      <p><b>Ciudad:</b> <%= car.city%></p>
-      <p><b>Marca:</b> <%= car.brand%></p>
-      <p><b>Modelo:</b> <%= car.model%></p>
-      <%= link_to "Ver auto", car_path(car), class:"btn" %>
-      </div>
       <div class="img-car">
-      <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
+        <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
       </div>
+      <div class="info-car">
+        <p class="tipo-car"><%= car.model%></p>
+        <p class="model-car"><%= car.brand%> <%= car.year.year%></p>
+        <div class="line"></div>
+        <div class="info-price-car">
+          <p class="info-price">DÍA DESDE</p>
+          <p class="price-car">S/.<%= car.price_per_day%></p>
+        </div>
+        <%= link_to "Ver detalles", car_path(car), class:"btn" %>
+      </div>
+
     </div>
   <% end %>
   </div>
