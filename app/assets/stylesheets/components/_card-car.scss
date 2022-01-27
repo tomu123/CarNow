@@ -1,15 +1,46 @@
 .card-car {
-  display: flex;
-  width: 360px;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #cccaca;
-  margin: 10px 10px 10px 0;
+  box-shadow: 0 0px 10px -3px  rgba(0,0,0,.3);
+  margin: 10px;
   background: #fff;
-  padding: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  transition: all .3s ease;
+  border-radius: 5px;
+}
+.card-car:hover {
+  transform: scale(1.02);
+}
+.card-car .tipo-car {
+  font-weight: 100;
+}
+.card-car .model-car {
+  font-size: 30px;
+  font-weight: bold;
+}
+.card-car .line {
+  height: 1px;
+  width: 100%;
+  background-color: #e27676;
+  margin: 0 auto 5px auto;
+}
+.card-car .info-price-car {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-car .info-price {
+  font-size: 12px;
+}
+.card-car .price-car {
+  font-size: 28px;
+  color: #e27676;
+  font-weight: bold;
+}
+.card-car .btn {
+  width: 100%;
 }
 .img-car {
-  width: 150px;
+  width: 100%
 }
 .img-car img{
   width: 100%;

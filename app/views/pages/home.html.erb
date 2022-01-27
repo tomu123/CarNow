@@ -1,26 +1,38 @@
 
 <div class="banner" style="background-image:url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')">
   <h2>Alquiler de autos en Lima</h2>
-  <%= link_to "Búsqueda flexible", cars_path, class: "btn" %>
+  <nav class="search">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
+      <input class="form-control mr-sm-2" type="date" placeholder="Check in" aria-label="Search">
+      <input class="form-control mr-sm-2" type="date" placeholder="Check out" aria-label="Search">
+      <button class="btn-1 btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search-location"></i></button>
+    </form>
+  </nav>
 </div>
 
 <section class="cards">
   <h2>ELIGE TU COCHE</h2>
   <div class="container">
-  <% @cars.each do |car|%>
-    <div class="card-car">
-      <div class="info-car">
-      <p><b>S/.<%= car.price_per_day%> / dia</b></p>
-      <p><b>Ciudad:</b> <%= car.city%></p>
-      <p><b>Marca:</b> <%= car.brand%></p>
-      <p><b>Modelo:</b> <%= car.model%></p>
-      <a href="#" class="btn">Ver auto</a>
-      </div>
-      <div class="img-car">
-      <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
-      </div>
+    <div class="row justify-content-center">
+      <% @cars.each do |car|%>
+        <div class="card-car col-12 col-md-5 col-lg-3">
+          <div class="img-car">
+            <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
+          </div>
+          <div class="info-car">
+            <p class="tipo-car"><%= car.model%></p>
+            <p class="model-car"><%= car.brand%> <%= car.year.year%></p>
+            <div class="line"></div>
+            <div class="info-price-car">
+              <p class="info-price">DÍA DESDE</p>
+              <p class="price-car">S/.<%= car.price_per_day%></p>
+            </div>
+            <%= link_to "Ver detalles", car_path(car), class:"btn" %>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
   </div>
 </section>
 <section class="advantages">

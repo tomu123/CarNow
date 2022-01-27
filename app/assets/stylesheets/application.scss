@@ -16,13 +16,13 @@
 @import "components/banner";
 @import "components/card-car";
 @import "components/footer";
+@import "components/form";
 .cards  h2 {
   margin-top: 50px;
   text-align: center;
 }
 .cards .container {
-  display: flex;
-  flex-wrap: wrap;
+
 }
 /*home-advantages*/
 .advantages {
@@ -54,4 +54,5 @@
   border-radius: 50%;
   border: 2px solid #fff;
   color: #fff;
+  margin-bottom: 15px;
 }
