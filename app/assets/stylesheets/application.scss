@@ -22,9 +22,7 @@
   text-align: center;
 }
 .cards .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+
 }
 /*home-advantages*/
 .advantages {
@@ -56,4 +54,5 @@
   border-radius: 50%;
   border: 2px solid #fff;
   color: #fff;
+  margin-bottom: 15px;
 }
