@@ -7,6 +7,8 @@ class PagesController < ApplicationController
     @car = Car.find(params[:id])
   end
   def search
+    @cars = Car.all
+
   end
   private
 
