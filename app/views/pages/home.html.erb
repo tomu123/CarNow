@@ -1,9 +1,9 @@
 
-<div class="banner" style="background-image:url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80')">
-  <h2>Alquiler de autos en Lima</h2>
+<div class="banner">
+  <h2><strong>Alquiler de autos en Lima</strong></h2>
   <nav class="search">
     <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Lugar" aria-label="Search">
       <input class="form-control mr-sm-2" type="date" placeholder="Check in" aria-label="Search">
       <input class="form-control mr-sm-2" type="date" placeholder="Check out" aria-label="Search">
       <button class="btn-1 btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search-location"></i></button>
@@ -12,28 +12,53 @@
 </div>
 
 <section class="cards">
-  <h2>ELIGE TU COCHE</h2>
+  <h2><strong>Los más populares</strong></h2>
   <div class="container">
-    <div class="row justify-content-center">
-      <% @cars.each do |car|%>
-        <div class="card-car col-12 col-md-5 col-lg-3">
-          <div class="img-car">
-            <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
-          </div>
-          <div class="info-car">
-            <p class="tipo-car"><%= car.model%></p>
-            <p class="model-car"><%= car.brand%> <%= car.year.year%></p>
-            <div class="line"></div>
-            <div class="info-price-car">
-              <p class="info-price">DÍA DESDE</p>
-              <p class="price-car">S/.<%= car.price_per_day%></p>
+    <div class="row justify-content-between">
+      <% @cars.each_with_index do |car, index|%>
+        <% if index < 3 %>
+          <div class="card-car col-12 col-md-5 col-lg-3">
+            <div class="img-car">
+              <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
             </div>
-            <%= link_to "Ver detalles", car_path(car), class:"btn" %>
+            <div class="info-car">
+              <p class="tipo-car"><%= car.model%></p>
+              <p class="model-car"><%= car.brand%> <%= car.year.year%></p>
+              <small class="text-muted"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>  4.85</small>
+              <div class="line"></div>
+              <div class="info-price-car">
+                <p class="info-price">DÍA DESDE</p>
+                <p class="price-car">S/.<%= car.price_per_day%></p>
+              </div>
+              <%= link_to "Ver detalles", car_path(car), class:"btn" %>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
+</section>
+<section class="experience">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1502489597346-dad15683d4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDZ8fGNhciUyMGJhY2tncm91bmRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)">Prueba nuestro servicio</div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1617083278635-f27a36dbcb8e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Njl8fGNhciUyMGJhY2tncm91bmRzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60)">Mejores experiencias</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="owner">
+  <div class= container>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1520611980017-9562f7d6dc82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAwfHxwcm9maWxlJTIwcGljdHVyZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)">¿Tienes preguntas sobre como alquilar tu vehículo?</div>
+</div>
+
 </section>
 <section class="advantages">
 <h2>¿POR QUÉ RESERVAR TU AUTO CON NOSOTROS?</h2>
