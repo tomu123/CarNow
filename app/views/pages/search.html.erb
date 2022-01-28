@@ -1,0 +1,60 @@
+<section class="section-search">
+  <div class="container container2">
+    <div class="cont-input">
+    <input type="text" placeholder="Ingrese un lugar" class="input-search">
+    <i class="fas fa-search"></i>
+  </div>
+    <div class="btns-search">
+      <button class="btn-search">
+        Marca <i class="fas fa-angle-down"></i>
+        <div class="options">
+          <% @cars.distinct.pluck(:brand).each do |brand|  %>
+            <input type="checkbox" id=<%= brand%> name=<%= brand%>>
+            <label for=<%= brand%>><%= brand%></label>
+            <br>
+          <% end %>
+        </div>
+      </button>
+      <button class="btn-search">
+        Modelo <i class="fas fa-angle-down"></i>
+        <div class="options">
+          <% @cars.distinct.pluck(:model).each do |model|  %>
+            <input type="checkbox" id=<%= model%> name=<%= model%>>
+            <label for=<%= model%>><%= model%></label>
+            <br>
+          <% end %>
+        </div>
+      </button>
+    </div>
+  </div>
+
+    <div class="container">
+      <div class="cards">
+        <% @cars.each do |car|%>
+          <div class="card-search">
+            <div class="img-card">
+              <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
+            </div>
+            <div class="info-card">
+              <div class="info-arriba">
+                <p class="tipo-car"><%= car.model%></p>
+                <p class="model-car"><%= car.brand%> <%= car.year.year%></p>
+              </div>
+              <div class="info-abajo">
+                  <div>
+                    <p>⭐ 4,86 <span>(86 reseñas)</span></p>
+                    <%= link_to "Ver detalles", car_path(car), class:"btn" %>
+                  </div>
+                  <div>
+                    <p class="">S/.<%= car.price_per_day%> / dia</p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31222.48276965293!2d-75.26416455!3d-11.98762125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2spe!4v1643384826080!5m2!1sen!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+</section>
