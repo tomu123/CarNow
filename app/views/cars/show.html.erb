@@ -49,8 +49,8 @@
   </div>
 </div>
 <div class="group-btn">
-  <a class="btn btn-primary mb-3" href="<% link_to "Volver al listado", cars_path %>" role="button">Volver al listado</a>
-  <a class="btn btn-primary mb-3" href="<% link_to "Editar", new_car_path %>" role="button">Editar</a>
-  <a class="btn btn-primary mb-3 " href="<% link_to "Eliminar", car_path(@car), method: :delete,
-              data: { confirm: "Are you sure?" }  %>" role="button">Eliminar</a>
+  <%= link_to "Volver al listado", cars_path, class:"btn btn-primary mb-3" %>
+  <%= link_to "Editar", new_car_path, class:"btn btn-primary mb-3" %>
+  <%= link_to "Eliminar", car_path(@car), method: :delete,
+              data: { confirm: "Are you sure?" }, class:"btn btn-primary mb-3"  %>
 </div>
