@@ -1,9 +1,10 @@
 footer {
-  text-align: center;
   background: #000;
   color: #fff;
   padding: 15px 0;
   margin: 0;
+  display: flex;
+  justify-content: space-between;
 }
 footer .social-media i {
   color: #fff;
@@ -18,4 +19,12 @@ footer .social-media i {
 .social-media i:hover {
   background: #fff;
   color: #000;
+  border-radius: 6px;
+}
+
+.copy {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 15px;
+  font-weight: lighter;
 }
