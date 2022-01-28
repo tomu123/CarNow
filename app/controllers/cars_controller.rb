@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: %i[ show edit update destroy ]
+  before_action :set_car, only: %i[show edit update destroy]
   def show
     authorize @car
   end
@@ -25,17 +25,14 @@ class CarsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
     @car.update(car_params)
     redirect_to car_path(@car)
   end
 
   def destroy
-
     @car.destroy
     redirect_to cars_path(@car)
   end
@@ -43,12 +40,11 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:brand, :city, :rating, :city, :model, :color, :number_plate, :year)
+    params[:car][:year] = Date.new(params[:car][:year], 1, 1)
+    params.require(:car).permit(:brand, :city, :rating, :model, :color, :number_plate, :year)
   end
 
   def set_car
     @car = Car.find(params[:id])
   end
-
-
 end

@@ -1,2 +1,24 @@
-<h1>Cars#index</h1>
-<p>Find me in app/views/cars/index.html.erb</p>
+<h1>My Cars</h1>
+<section class="cards">
+  <div class="container">
+    <div class="row justify-content-center">
+      <% @cars.each do |car|%>
+        <div class="card-car col-12 col-md-5 col-lg-3">
+          <div class="img-car">
+            <img src="https://www.pngall.com/wp-content/uploads/2018/04/Sedan-Transparent.png" alt="">
+          </div>
+          <div class="info-car">
+            <p class="tipo-car"><%= car.model%></p>
+            <p class="model-car"><%= car.brand%> <%= car.year.year%></p>
+            <div class="line"></div>
+            <div class="info-price-car">
+              <p class="info-price">DÍA DESDE</p>
+              <p class="price-car">S/.<%= car.price_per_day%></p>
+            </div>
+            <%= link_to "Ver detalles", car_path(car), class:"btn" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
